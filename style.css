@@ -4,8 +4,8 @@ body {
 }
 
 .main-game {
-    height: 100vh;
-    width: 100vw;
+    height: 100vh; /*viewport height*/
+    width: 100vw; /*viewport width*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,13 +14,13 @@ body {
 .genius {
     display: grid;
     grid-template-areas: 'verde vermelho'
-    'amarelo azul';
-    grid-gap: 10px;
+    'amarelo azul'; /*Define o nome para cada container*/
+    grid-gap: 10px;  /*Define o espaço entre cada área do grid*/
     border: 1px solid #ffffff;
     background-color: #ffffff;
     border-radius: 100%;
-    width: 700px;
-    height: 700px;
+    width: 40vmax;  /*Relativo a 40% da maior dimensão de largura do viewport*/
+    height: 40vmax;  /*Relativo a 40% da maior dimensão de altura do viewport*/
 }
 
 .blue {
@@ -48,5 +48,5 @@ body {
 }
 
 .selected {
-    opacity: 0.8;
+    opacity: 0.1;
 }

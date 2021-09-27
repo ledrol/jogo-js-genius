@@ -1,13 +1,10 @@
-# Oi, tudo bem? Chegou aqui através do curso, certo? 🙃
 
-Esse é o repositório da nossa aula de Javascript, na qual vamos fazer um simples jogo Gênesis com apenas algumas linhas de código! 
+Essa é uma versão em javascript de um jogo de memória tipo Genius, para exercício de aprendizado.
 
-### Os requisitos são:
+As alterações são:
 
-* [HTML básico](https://www.w3schools.com/html/)
-* [CSS básico](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
-* [Javascript básico](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
- 
+- Mudança no alerta para 'piscar', o original somente 'acende' e depois de clicar 'apaga';
+- Ajuste no css para o tamanho de tela, o original fica com o círculo 'cortado';
+- Adicionado mais comentários;
 
-
-## 🚀 Let's code! 🚀
+* [Repositório original](https://github.com/SpruceGabriela/genesis-dio)

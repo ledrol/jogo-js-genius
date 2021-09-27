@@ -1,5 +1,5 @@
-let order = [];
-let clickedOrder = [];
+let order = [];  //Array com as ordens aleatórias de cores
+let clickedOrder = []; //Array com a ordem dos clicks
 let score = 0;
 
 //0 - verde
@@ -14,8 +14,8 @@ const yellow = document.querySelector('.yellow');
 
 //cria ordem aletoria de cores
 let shuffleOrder = () => {
-    let colorOrder = Math.floor(Math.random() * 4);
-    order[order.length] = colorOrder;
+    let colorOrder = Math.floor(Math.random() * 4); //Guarda um número aleatório entre 0 e 3
+    order[order.length] = colorOrder; //Preenche o vetor com os números sorteados
     clickedOrder = [];
 
     for(let i in order) {
@@ -28,22 +28,22 @@ let shuffleOrder = () => {
 let lightColor = (element, number) => {
     number = number * 500;
     setTimeout(() => {
-        element.classList.add('selected');
-    }, number - 250);
+        element.classList.add('selected'); //Adiciona a classe css
+    }, number - 250);  //A função setTimeout espera o tempo determinado para depois executar
     setTimeout(() => {
-        element.classList.remove('selected');
-    });
+        element.classList.remove('selected'); //Remove a classe css
+    }, number - 150); //Permite que o item 'pisque' ao definir o tempo para remover a classe
 }
 
 //checa se os botoes clicados são os mesmos da ordem gerada no jogo
 let checkOrder = () => {
     for(let i in clickedOrder) {
-        if(clickedOrder[i] != order[i]) {
-            gameOver();
+        if(clickedOrder[i] != order[i]) { //Compara o array de ordem dos clicks com array de ordens aleatórias 
+            gameOver();  //Se for diferente, termina o jogo
             break;
         }
     }
-    if(clickedOrder.length == order.length) {
+    if(clickedOrder.length == order.length) { //Se for igual, avança o nível do jogo
         alert(`Pontuação: ${score}\nVocê acertou! Iniciando próximo nível!`);
         nextLevel();
     }
@@ -51,12 +51,12 @@ let checkOrder = () => {
 
 //funcao para o clique do usuario
 let click = (color) => {
-    clickedOrder[clickedOrder.length] = color;
-    createColorElement(color).classList.add('selected');
+    clickedOrder[clickedOrder.length] = color; //Atribui as cores para o array com ordem de clicks
+    createColorElement(color).classList.add('selected'); //Adiciona a classe css
 
     setTimeout(() => {
-        createColorElement(color).classList.remove('selected');
-        checkOrder();
+        createColorElement(color).classList.remove('selected'); //Remove a classe css depois de um tempo de setTimeout
+        checkOrder(); //Chama função de checagem de ordem
     },250);
 }
 
@@ -75,17 +75,17 @@ let createColorElement = (color) => {
 
 //funcao para proximo nivel do jogo
 let nextLevel = () => {
-    score++;
+    score++;  //Incrementa o número de pontos
     shuffleOrder();
 }
 
 //funcao para game over
 let gameOver = () => {
     alert(`Pontuação: ${score}!\nVocê perdeu o jogo!\nClique em OK para iniciar um novo jogo`);
-    order = [];
-    clickedOrder = [];
+    order = [];  //Zera o array de ordens aleatórias
+    clickedOrder = [];  //Zera o array de ordens clicadas
 
-    playGame();
+    playGame();  //inicia o jogo
 }
 
 //funcao de inicio do jogo
